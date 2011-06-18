@@ -14,7 +14,7 @@
        (field-tag accessor . more) ***)
      (progn
        (defstruct (type
-                    (:constructor constructor (accessor ***))
+                    (:constructor constructor (constructor-tag ***))
                     (:predicate predicate)
                     (:conc-name ""))
          accessor ***)
