@@ -9,6 +9,18 @@
 (define-syntax define-record-type
   (syntax-rules ()
     ((define-record-type type
+       (constructor)
+       predicate
+       (field-tag accessor . more) ***)
+     (progn
+       (defstruct (type
+                    (:constructor constructor ())
+                    (:predicate predicate)
+                    (:conc-name ""))
+         accessor ***)
+       (define-modifier accessor . more)
+       ***))
+    ((define-record-type type
        (constructor constructor-tag ***)
        predicate
        (field-tag accessor . more) ***)
@@ -48,8 +60,3 @@
     (is (= 2 (kdr kons))))
   ;; clean up
   (map nil #'unintern '(pare kons pare? kar set-kar! kdr)))
-
-
-
-
-
