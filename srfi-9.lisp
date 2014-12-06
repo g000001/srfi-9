@@ -40,7 +40,7 @@
     ((define-modifier accessor modifier)
      (setf (symbol-function 'modifier)
            (lambda (obj val)
-             (funcall #'(setf accessor) val obj))))))
+             (setf (accessor obj) val))))))
 
 
 (test define-record-type
