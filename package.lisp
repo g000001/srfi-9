@@ -1,11 +1,12 @@
 ;;;; package.lisp
 
-(cl:in-package :cl-user)
+(cl:in-package #:cl-user)
 
-(defpackage :srfi-9
+(defpackage "https://github.com/g000001/srfi-9"
   (:use)
-  (:export :define-record-type))
+  (:export #:define-record-type))
 
-(defpackage :srfi-9-internal
-  (:use :srfi-9 :cl :fiveam :mbe))
+(defpackage "https://github.com/g000001/srfi-9#internals"
+  (:use "https://github.com/g000001/srfi-9"
+        #:cl #:fiveam #:mbe))
 

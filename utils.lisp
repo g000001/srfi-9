@@ -1,4 +1,4 @@
-(cl:in-package :srfi-9-internal)
+(cl:in-package "https://github.com/g000001/srfi-9#internals")
 
 (defun vector-length (vec)
   (declare (optimize (safety 3) (speed 3)))

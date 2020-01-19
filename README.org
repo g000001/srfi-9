@@ -1,1 +1,0 @@
-* SRFI-9: Defining Record Types

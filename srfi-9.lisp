@@ -1,6 +1,6 @@
 ;;;; srfi-9.lisp
 
-(cl:in-package :srfi-9-internal)
+(cl:in-package "https://github.com/g000001/srfi-9#internals")
 
 (def-suite srfi-9)
 
@@ -12,11 +12,12 @@
        (constructor)
        predicate
        (field-tag accessor . more) ***)
-     (progn
-       (defstruct (type
+     (eval-when (:compile-toplevel :load-toplevel :execute)
+      (defstruct (type
                     (:constructor constructor ())
                     (:predicate predicate)
-                    (:conc-name ""))
+                    (:conc-name "")
+                    (:copier nil))
          accessor ***)
        (define-modifier accessor . more)
        ***))
@@ -24,11 +25,12 @@
        (constructor constructor-tag ***)
        predicate
        (field-tag accessor . more) ***)
-     (progn
+     (eval-when (:compile-toplevel :load-toplevel :execute)
        (defstruct (type
                     (:constructor constructor (constructor-tag *** &aux (accessor field-tag) ***))
                     (:predicate predicate)
-                    (:conc-name ""))
+                    (:conc-name "")
+                    (:copier nil))
          accessor ***)
        (define-modifier accessor . more)
        ***))))
